@@ -67,7 +67,7 @@ st.title("CYBER-GUARD")
 GROQ_API_KEY=os.getenv("GROQ_API_KEY")
 # llm = ChatGroq(
 #     temperature=0,
-#     model="llama3-70b-8192",
+#     model="llama-3.3-70b-versatile",
 #     api_key=GROQ_API_KEY
 # )
 
