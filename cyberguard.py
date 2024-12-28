@@ -32,14 +32,7 @@ from st_social_media_links import SocialMediaIcons
 # from streamlit_extras.copy_to_clipboard import copy_to_clipboard
 from datetime import datetime
 
-
-
-
-
-
-
-
-
+##############################################################################################################################################################
 st.title("CYBER-GUARD")
 
 # loader=PyPDFDirectoryLoader("./knowledgebase_for_chatbot/")
@@ -163,7 +156,7 @@ def get_data_privacy_prompt(privacy_policy):
         """
     return prompt
 
-#######################################################################
+#############################################################################################################################################
 colorama.init()
 def type(words: str):
     for char in words:
@@ -174,7 +167,7 @@ def type(words: str):
 
 url = r'https://www.virustotal.com/vtapi/v2/file/scan'
 api= os.getenv("VT_API_KEY")
-#######################################################################
+######################################################################################################################################
 
 
 
@@ -260,17 +253,12 @@ if selection=="Dashboard":
         st.markdown("- Put a Firewall")
         st.markdown("- Use Proxies")
         st.markdown("- Analyze Ads Carefully - Don't click it in exctiment")
-
-        
         st.markdown("- Disable Multiple file downloads")
         st.markdown("- Don't Download Zipped/Compressed files")
         st.markdown("- Use Pen/USB drives carefully")
         st.markdown("- Regularly Scan your system for malwares")
         st.markdown("- Run Regular Data Backups")
         st.markdown("- Execute Automatic Security Updates")
-
-
-
 
     with col3:
         st.caption("Critical")
@@ -285,20 +273,6 @@ if selection=="Dashboard":
         st.markdown("- Use VPN and dongles (small, removable devices that have secure access to wireless broadband) when travelling.")
         st.markdown("- Ensure that you only use apps from a reputable source.")
         st.markdown("- Limit login attempts")
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
     
     st.write("Latest Cyber Attacks")
     col1,col2,col3=st.columns(3)
@@ -328,7 +302,7 @@ if selection=="Dashboard":
         st.caption("New Google Project Aims to Become Global Clearinghouse for Scam, Fraud Data")
 
 
-
+##############################################################################################################################################
 if selection=="NCA CrimeAssist":
     st.subheader("Welcome to National Crime Agency Crime Assistant")
     col1,col2=st.columns(2)
@@ -346,16 +320,13 @@ if selection=="NCA CrimeAssist":
     with col2:
         st.html("<h4>For General enquiries</h4>")
         st.write("Reach us via [email](communication@nca.gov.uk) or Telephone: 0370 496 7622 (available 24/7) not used for outgoing calls")
-        # st.write("")
-        # st.caption("This number is .")
+        
     
     st.html("<h4>Postal Address</h4>")
     st.write("PO Box 8000, London, SE11 5EN")
 
-
     st.html("<h4>Scam alert: fake letters and emails</h4>")
     st.write("Reach us via [email](report@phishing.gov.uk) or contact [Action Fraud](www.actionfraud.police.uk) /03001232040")
-
 
     st.subheader("Stay SAFE")
     st.write("Suspect anything or anyone you don’t know – no matter what or who they claim to be")
@@ -363,7 +334,6 @@ if selection=="NCA CrimeAssist":
     st.write("Find out for certain who you are dealing with. Challenge anything that seems suspect")
     st.write("End a situation if you feel uncomfortable. If you feel threatened call your local police on 101 or 999")
 
-    
     st.subheader("About")
     st.caption("The National Crime Agency (NCA) is a national law enforcement agency in the United Kingdom. It is the UK's lead agency against organised crime; human, weapon and drug trafficking; cybercrime; and economic crime that goes across regional and international borders, but it can be tasked to investigate any crime.")
     st.write("Visit Offical [NCA](https://www.nationalcrimeagency.gov.uk/) Website")
@@ -373,44 +343,16 @@ if selection=="NCA CrimeAssist":
         "https://web.facebook.com/sharer.php?u=https%3A%2F%2Fwww.nationalcrimeagency.gov.uk%2Fcontact-us&_rdc=1&_rdr#",
         "https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.nationalcrimeagency.gov.uk%2Fcontact-us"
     ]
-        
     social_media_icons = SocialMediaIcons(social_media_links)
     social_media_icons.render()
-
-
-    
-
+##########################################################################################################################################
 if selection=="SafeSocial":
     text=st.text_input("Put Concern Here")
     if st.button("Guide"):
         res=llm.invoke(get_sm_footprints_prompt(text))
         st.write(res.content)
  
-    
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#################################################################################################################################################
 
 
 if selection=="Cyber Awareness Chatbot":
@@ -421,7 +363,6 @@ if selection=="Cyber Awareness Chatbot":
         st.write(res.content)
 
 ############################################################################################################################################################
-
 
 
 def scan_file(api_key, file_path):
@@ -458,21 +399,6 @@ def get_file_scan_report(api_key, scan_id):
     else:
         # print("Error:", response.status_code, response.text)
         return None
-
-# if __name__ == "__main__":
-#     api_key = 'YOUR_API_KEY'
-#     file_path = 'path_to_your_file'
-
-    # scan_id = scan_file(api_key, file_path)
-    # if scan_id:
-    #     report = get_scan_report(api_key, scan_id)
-    #     if report:
-    #         print(report)
-
-
-
-
-
 
 def scan_url(api_key, url):
     # Define the endpoint for URL scanning
@@ -520,21 +446,7 @@ if selection=="Malicious File Scanner":
             scan_id = scan_file(api, file.name)
             report = get_file_scan_report(api, scan_id)
             st.write(report)
-
             
-            # with open(file.name, mode='wb') as w:
-            #         w.write(file.getvalue())
-            # file_to_upload = {"file": open(file.name, "rb")}
-            # response = requests.post(url,files = file_to_upload , params=params)
-            # file_url = f"https://www.virustotal.com/api/v3/files/{(response.json())['sha1']}"
-            # headers = {"accept": "application/json", "x-apikey": api}
-            # type(colorama.Fore.YELLOW + "Analysing....")
-            # response = requests.get(file_url,headers=headers)
-            # report = response.text
-            # report = json.loads(report)
-            # # json_string = json.dumps(report)
-            # st.write(response)
-    
     if selected_option=="URL Scanner":
         st.subheader("Malicious URL Scanner")
         url=st.text_input("Paste URL Here")
@@ -546,44 +458,7 @@ if selection=="Malicious File Scanner":
             scan_id=scan_url(api, url)
             st.write(get_url_scan_report(api, scan_id))
 
-            # st.write(scan_id)
-
-
-
-
-
-
-
-
-
-
-
-
-
-# # Scan the URL
-# scan_url(api_key, url_to_scan)
-
-# # Optionally, you can retrieve the scan report using the scan ID
-# # scan_id = 'your_scan_id'
-# # get_scan_report(api_key, scan_id)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# https://youtu.be/Yr0xPVFcf-U?si=xNHedIZgSQbUc9f_
-
+########################################################################################################################################################################################
 if selection=="Education Portal":
     st.subheader("Welcome to Education Portal")
 
@@ -607,8 +482,6 @@ if selection=="Education Portal":
     with col2:
         st.caption("Tip for online data security")
         st.video("https://youtu.be/aO858HyFbKI?si=K7mDm_E4WysamUuK")
-
-    
         
     with st.expander("More"):
         st.write("")
@@ -656,27 +529,6 @@ if selection=="Education Portal":
 
     st.html("<h4>Essentials</h4>")
 
-#How to create a strong password?
-# https://youtu.be/TvrFpAFitQ0?si=wiz21Gn_w94sH5F9
-# Phishing
-# https://youtu.be/00hpRjfbM0A?si=OiQ52JrL0qe6eJ6b
-# Top 4 cyber fraud red flags
-# https://youtu.be/wHdLB_tHNVo?si=pLAehEzj4zzfZa4e
-#spoofing and indentity theft
-# https://youtu.be/ULiinB6nMPw?si=7__iJrCQsN7CKsdm
-# what is proxy server?
-# https://youtu.be/5cPIukqXe5w?si=djHvp2rs3GybcwWO
-# what is firewall?
-# https://youtu.be/kDEX1HXybrU?si=WnoyRM9_98_MZ3zM
-# VPN Explained
-# https://youtu.be/R-JUOpCgTZc?si=AVQ0AVVWYpdJtP9E
-# Data privacy and GDPR
-#https://youtu.be/hk-ZgRIYYXc?si=QPGmg7l0eU6FPvoL
-#Physical Security
-# https://youtu.be/tYapnGMrzp8?si=bPApRizw6lh4GJmy
-# social networks security risk
-# https://youtu.be/IVgobw7JFeE?si=UGi6mA0Sat4ihMVY
-
     col1,col2=st.columns(2)
     with col1:
         st.caption("How to create a strong password?")
@@ -720,7 +572,6 @@ if selection=="Education Portal":
             st.caption("Physical Security")
             st.video("https://youtu.be/tYapnGMrzp8?si=bPApRizw6lh4GJmy")
 
-
     st.write("Test Yourself [Here](https://docs.google.com/forms/d/1u2Mm2gwvPQmMWRM_9WTtUC3-E_XRpX93ECFB8hQVMto/edit)")
         
     st.html("<h4>Advanced</h4>")
@@ -762,7 +613,6 @@ if selection=="PolicyGuardian":
         st.write(res.content)
         res=res.content
     if res!="": 
-        # and st.button("Save and Download Markdown File"):
         # Generate the Markdown file content
         file_name = "PolicyGuardian_response.md"
         markdown_content = f"# PolicyGuardian Response\n\n{res}"
@@ -774,83 +624,9 @@ if selection=="PolicyGuardian":
             file_name=file_name,
             mime="text/markdown"
         )
-        # st.success("Downloading Mardown File")
         
-            # st.markdown(copy_code, unsafe_allow_html=True)
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-#https://youtu.be/hk-ZgRIYYXc?si=QPGmg7l0eU6FPvoL
-
-
-# Different types of AI/ML-powered cybercrimes
-# https://youtu.be/1Z_dh9Xgtq0?si=DZq0Mg2yJM7SHgcJ
-
-# How to respond to a network breach?
-# https://youtu.be/0_2P_trzFsQ?si=_iO2hdmGjMNN9iu0
-
-
-# Top 5 security checklist for OT devices
-# https://youtu.be/-aV0ZCRq_0g?si=BFZS4wYZqJ4rlQRp
-
-
-
-# Secure remote working
-# https://youtu.be/F-U_7CGYiHQ?si=6GWZp6RGeFkxeYaZ
-
-# Zero day attack
-# https://youtu.be/1wul_zBphpY?si=SmMaNlRvto-g_9tI
-
-
-
-# Top 5 cloud security best practices checklist
-# https://youtu.be/ISkw0MwP2UA?si=AMiYkXKGdWTRc2zA
-    
-#     col1,col2=st.columns(2)
-#     with col1:
-#         st.markdown('''
-#         <a href="https://www.ftc.gov/system/files/attachments/cybersecurity-small-business/cybersecuirty_sb_factsheets_all.pdf">
-#             <img src="https://devtorium.com/wp-content/webp-express/webp-images/uploads/2023/01/services_security_illustration.png.webp" width="250" height="200" />
-#         </a>''',
-#         unsafe_allow_html=True
-#         )
-#         st.caption("Cyber Security Basics")
-#     with col2:
-#         st.markdown('''
-#         <a href="https://www.ibanet.org/MediaHandler?id=2F9FA5D6-6E9D-413C-AF80-681BAFD300B0">
-#             <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/97/88/76/9788767b-054e-b968-d21a-9180e80c77de/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/512x512bb.jpg" width="200" height="200" />
-#         </a>''',
-#         unsafe_allow_html=True
-#         )
-#         st.caption("Cyber Security Guidlines")
-
-
-
-#         url="https://docs.google.com/forms/d/e/1FAIpQLSeRVC8WVGSqDHN5B9_kX18RbRnS0gOFyMbKYZFqzBSGyP5rLA/viewform?usp=header"
-#     st.write("Test Your Cyber Knowledge [Here](https://docs.google.com/forms/d/e/1FAIpQLSeRVC8WVGSqDHN5B9_kX18RbRnS0gOFyMbKYZFqzBSGyP5rLA/viewform?usp=header)")
-    
-# # st.markdown("Test your Knowledge" %url)
-
-
-
-        
+######################################################################################################################################################################################################        
 if selection=="Feedback":
     st.subheader("Welcome")
     st.caption("We'd love to hear your thoughts! Your feedback helps us improve and provide a better experience. Please share your thoughts below — it only takes a moment!")
     st.write("Leave Feedback [Here](https://docs.google.com/forms/d/e/1FAIpQLSfvDDT9ZQ8_QHRr6GS01SqsFajlJgQtlKMCXO82JPto6h4v8g/viewform?usp=sharing)")
-    
-
-    
-    
