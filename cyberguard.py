@@ -31,75 +31,59 @@ from st_social_media_links import SocialMediaIcons
 # from docx import Document
 # from streamlit_extras.copy_to_clipboard import copy_to_clipboard
 from datetime import datetime
+from langchain_groq import ChatGroq
 
 ##############################################################################################################################################################
 st.title("CYBER-GUARD")
 
-# loader=PyPDFDirectoryLoader("./knowledgebase_for_chatbot/")
-# data = loader.load()
-# # #split the extracted data into text chunks using the text_splitter, which splits the text based on the specified number of characters and overlap
-# text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-# text_chunks = text_splitter.split_documents(data)
-# # #download the embeddings to use to represent text chunks in a vector space, using the pre-trained model "sentence-transformers/all-MiniLM-L6-v2"
-# embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-# # # # # create embeddings for each text chunk using the FAISS class, which creates a vector index using FAISS and allows efficient searches between vectors
-# vector_store = FAISS.from_documents(text_chunks, embedding=embeddings)
+loader=PyPDFDirectoryLoader("./knowledgebase_for_chatbot/")
+data = loader.load()
+#split the extracted data into text chunks using the text_splitter, which splits the text based on the specified number of characters and overlap
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+text_chunks = text_splitter.split_documents(data)
+#download the embeddings to use to represent text chunks in a vector space, using the pre-trained model "sentence-transformers/all-MiniLM-L6-v2"
+embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+# create embeddings for each text chunk using the FAISS class, which creates a vector index using FAISS and allows efficient searches between vectors
+vector_store = FAISS.from_documents(text_chunks, embedding=embeddings)
 
-# vector_store.save_local("faiss_index")
+vector_store.save_local("faiss_index")
 
-# new_vector_store = FAISS.load_local(
-#     "faiss_index", embeddings, allow_dangerous_deserialization=True
-# )
+new_vector_store = FAISS.load_local(
+     "faiss_index", embeddings, allow_dangerous_deserialization=True
+ )
 
 
 
 # # Retrieve and generate using the relevant snippets of the blog.
-# retriever = new_vector_store.as_retriever()
+ retriever = new_vector_store.as_retriever()
 
 # from langchain_groq import ChatGroq
 GROQ_API_KEY=os.getenv("GROQ_API_KEY")
-# llm = ChatGroq(
-#     temperature=0,
-#     model="llama-3.3-70b-versatile",
-#     api_key=GROQ_API_KEY
-# )
-
-# prompt = hub.pull("rlm/rag-prompt")
-from langchain_groq import ChatGroq
-
 llm = ChatGroq(
-    temperature=0,
-    model="llama3-70b-8192",
-    api_key=GROQ_API_KEY
-)
+     temperature=0,
+     model="llama-3.3-70b-versatile",
+     api_key=GROQ_API_KEY
+ )
 
-# prompt = hub.pull("rlm/rag-prompt")
-
-
-# def format_docs(docs):
-#     return "\n\n".join(doc.page_content for doc in docs)
-
-
-# rag_chain = (
-#     {"context": retriever | format_docs, "question": RunnablePassthrough()}
-#     | prompt
-#     | llm
-#     | StrOutputParser()
-# )
+ prompt = hub.pull("rlm/rag-prompt")
 
 
 
-# # Function to save content to a Word document
-# def save_to_word(content, filename):
-#     # Create a new Document
-#     doc = Document()
-    
-#     # Add content to the document
-#     doc.add_heading('PolicyGuardian Response', level=1)
-#     doc.add_paragraph(content)
-    
-#     # Save the document
-#     doc.save(filename)
+
+def format_docs(docs):
+     return "\n\n".join(doc.page_content for doc in docs)
+
+
+rag_chain = (
+     {"context": retriever | format_docs, "question": RunnablePassthrough()}
+     | prompt
+     | llm
+     | StrOutputParser()
+ )
+
+
+
+
 
 def get_sm_footprints_prompt(query):
     prompt=f"""
