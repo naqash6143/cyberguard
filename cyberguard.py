@@ -626,6 +626,9 @@ if selection=="Feedback":
     with col2:
        # Create a bar plot
        fig, ax = plt.subplots()
+       x=[i for i in themes.keys()]
+       y=[i for i in themes.vaues()]
+     
        ax.bar(themes.keys(), themes.values())
        
        # Adding title and labels
