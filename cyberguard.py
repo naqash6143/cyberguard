@@ -596,13 +596,48 @@ if selection=="Feedback":
     st.subheader("Welcome")
     st.caption("We'd love to hear your thoughts! Your feedback helps us improve and provide a better experience. Please share your thoughts below — it only takes a moment!")
     st.write("Leave Feedback [Here](https://docs.google.com/forms/d/e/1FAIpQLSfvDDT9ZQ8_QHRr6GS01SqsFajlJgQtlKMCXO82JPto6h4v8g/viewform?usp=sharing)")
- 
-   # Generate the word cloud
-    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
-    
-    # Display the word cloud using matplotlib
-    plt.figure(figsize=(10, 5))
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis('off')  # Hide axes
-    st.pyplot(plt)
-plt.pie(temp['sentiment_emotion_analysis']["sentiment"].values(),labels=temp['sentiment_emotion_analysis']["sentiment"].keys(),autopct="%.2f%%")
+
+   col1,col2=st.columns(2)
+   with col1:
+     # Generate the word cloud
+      wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
+      # Display the word cloud using matplotlib
+      plt.figure(figsize=(10, 5))
+      plt.imshow(wordcloud, interpolation='bilinear')
+      plt.axis('off')  # Hide axes
+      plt.title("Wordcloud for CyberGuard Reviews")
+      st.pyplot(plt)
+    with col2:
+     # Display pie chart
+       fig, ax = plt.subplots(figsize=(5, 5))
+       ax.pie(sentiment.values, labels=sentiment.keys(), autopct="%1.1f%%", startangle=90)
+       # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
+       st.write("Sentiment Analysis")
+       st.pyplot(fig)
+
+    col1,col2=st.columns(2)
+    with col1:
+       # Display pie chart
+       fig, ax = plt.subplots(figsize=(5, 5))
+       ax.pie(emotions.values, labels=emotions.keys(), autopct="%1.1f%%", startangle=90)
+       # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
+       st.write("Emotion Analysis")
+       st.pyplot(fig)
+    with col2:
+      # Create a bar plot
+      fig, ax = plt.subplots()
+      ax.bar(themes.keys(), themes.values())
+      
+      # Adding title and labels
+      ax.set_title('Themes Analysis')
+      ax.set_xlabel('Categories')
+      ax.set_ylabel('Values')
+      # Rotate x-axis labels by 45 degrees
+      plt.xticks(rotation=45)
+     # Display the plot in Streamlit
+     st.pyplot(fig)
+
+
+
+
+
