@@ -663,27 +663,30 @@ if selection=="Feedback":
 
     with col2:
       st.write("")
-
+    st.subheader("Recommendations for each Module")
     col1,col2,col3=st.columns(3)
     with col1:
+      st.write("Dashboard")
       st.write(recommendations['improvement_suggestions']['Dashboard'])
     with col2:
+      st.write("SafeSocial")
       st.write(recommendations['improvement_suggestions']['SafeSocial'])
     with col3:
+      st.write("Policy Guardian")
       st.write(recommendations['improvement_suggestions']['Policy Guardian'])
     col1,col2,col3=st.columns(3)
     with col1:
+      st.write("Education Portal")
       st.write(recommendations['improvement_suggestions']['Education Portal'])
     with col2:
+      st.write("NCA CrimeAssist")
       st.write(recommendations['improvement_suggestions']['NCA CrimeAssist'])
     with col3:
+      st.write("Malicious File Scanner")
       st.write(recommendations['improvement_suggestions']['Malicious File Scanner'])
     col1,col2,col3=st.columns(3)
-    with col1:
+    with col1
+      st.write("Cyber Awareness Chatbot")
       st.write(recommendations['improvement_suggestions']['Cyber Awareness Chatbot'])
-    with col2:
-      st.write(recommendations['improvement_suggestions']['innovation_opportunities'])
-    #with col3:
-      #st.write(recommendations['improvement_suggestions']['Malicious File Scanner'])
-
+      
 
