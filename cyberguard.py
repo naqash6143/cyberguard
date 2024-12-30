@@ -662,4 +662,8 @@ if selection=="Feedback":
       st.pyplot(fig)
 
     with col2:
-     st.write("")
+      st.write("")
+
+    col1,col2,col3=st.columns(3)
+    with col1:
+      st.write(recommendations['improvement_suggestions']['Dashboard'])
