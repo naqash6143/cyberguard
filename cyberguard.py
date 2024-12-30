@@ -618,31 +618,31 @@ if selection=="Feedback":
       st.write("Emotion Analysis")
       st.pyplot(fig)
     
- 
-    # Create a bar plot
-    fig, ax = plt.subplots()
-    x=[i for i in themes.keys()]
-    y=[i for i in themes.values()]
-  
-    ax.barh(x,y)
-    
-    # Adding title and labels
-    ax.set_title('Themes Analysis')
-    ax.set_xlabel('Categories')
-    ax.set_ylabel('Values')
-    # Rotate x-axis labels by 45 degrees
-    plt.xticks(rotation=45)
-    # Display the plot in Streamlit
-    st.pyplot(fig)
+    col1,col2=st.columns(2)
+    with col1:
+      # Create a bar plot
+      fig, ax = plt.subplots()
+      x=[i for i in themes.keys()]
+      y=[i for i in themes.values()]
+      ax.barh(x,y)
+      # Adding title and labels
+      ax.set_title('Themes Analysis')
+      ax.set_xlabel('Categories')
+      ax.set_ylabel('Values')
+      # Rotate x-axis labels by 45 degrees
+      plt.xticks(rotation=45)
+      # Display the plot in Streamlit
+      st.pyplot(fig)
 
+    with col2:
 
-   # Generate the word cloud
-    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
-    # Display the word cloud using matplotlib
-    plt.figure(figsize=(10, 5))
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis('off')  # Hide axes
-    plt.title("Wordcloud for CyberGuard Reviews")
-    st.pyplot(plt)
+     # Generate the word cloud
+      wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
+      # Display the word cloud using matplotlib
+      plt.figure(figsize=(10, 5))
+      plt.imshow(wordcloud, interpolation='bilinear')
+      plt.axis('off')  # Hide axes
+      plt.title("Wordcloud for CyberGuard Reviews")
+      st.pyplot(plt)
 
 
