@@ -685,7 +685,7 @@ if selection=="Feedback":
       st.write("Malicious File Scanner")
       st.write(recommendations['improvement_suggestions']['Malicious File Scanner'])
     col1,col2,col3=st.columns(3)
-    with col1
+    with col1:
       st.write("Cyber Awareness Chatbot")
       st.write(recommendations['improvement_suggestions']['Cyber Awareness Chatbot'])
       
