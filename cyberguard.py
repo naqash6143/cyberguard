@@ -623,7 +623,7 @@ if selection=="Feedback":
        # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
        st.write("Emotion Analysis")
        st.pyplot(fig)
-     with col2:
+    with col2:
        # Create a bar plot
        fig, ax = plt.subplots()
        ax.bar(themes.keys(), themes.values())
