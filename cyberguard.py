@@ -187,7 +187,7 @@ if selection=="Dashboard":
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
         st.write("Cyber Fundamental Score")
         st.pyplot(fig)
-        st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSeRVC8WVGSqDHN5B9_kX18RbRnS0gOFyMbKYZFqzBSGyP5rLA/viewform?usp=header)")
+        st.write("Improve your Score [Here](https://docs.google.com/forms/d/1u2Mm2gwvPQmMWRM_9WTtUC3-E_XRpX93ECFB8hQVMto/edit)")
     with col2:
         # Display pie chart
         fig, ax = plt.subplots(figsize=(5, 5))
@@ -196,7 +196,7 @@ if selection=="Dashboard":
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
         st.write("Risk Awareness Score")
         st.pyplot(fig)
-        st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSeRVC8WVGSqDHN5B9_kX18RbRnS0gOFyMbKYZFqzBSGyP5rLA/viewform?usp=header)")
+        st.write("Improve your Score [Here](https://docs.google.com/forms/d/1otwGsbHuM9Ju_afEoOW6t__Z6dZ36HZmYJ7kHhi0on8/edit)")
     with col3:
         # Display pie chart
         fig, ax = plt.subplots(figsize=(5, 5))
@@ -205,7 +205,7 @@ if selection=="Dashboard":
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
         st.write("Cyber Awareness Score")
         st.pyplot(fig)
-        st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSeRVC8WVGSqDHN5B9_kX18RbRnS0gOFyMbKYZFqzBSGyP5rLA/viewform?usp=header)")
+        st.write("Improve your Score [Here](https://docs.google.com/forms/d/1CAWF2l5TRPKMwVBMcjvxM2Hxo0rRreOTkQ7BD_j14ww/edit)")
 
     st.subheader("Cyber Security Guidelines")
 
