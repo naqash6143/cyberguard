@@ -509,7 +509,7 @@ if selection=="Education Portal":
         with col2:
             st.caption("How to configure privacy in Instagram?")
             st.video("https://youtu.be/ZcQzqdnkKvk?si=g5O2DzZG-Z4HNhCu")
-    st.write("Test Yourself [Here](https://docs.google.com/forms/d/1u2Mm2gwvPQmMWRM_9WTtUC3-E_XRpX93ECFB8hQVMto/edit")
+    st.write("Test Yourself [Here](https://docs.google.com/forms/d/1u2Mm2gwvPQmMWRM_9WTtUC3-E_XRpX93ECFB8hQVMto/edit)")
 
     st.html("<h4>Essentials</h4>")
 
@@ -586,7 +586,7 @@ if selection=="Education Portal":
         with col2:
             st.caption("Top 5 cloud security best practices checklist")
             st.video("https://youtu.be/ISkw0MwP2UA?si=AMiYkXKGdWTRc2zA")
-    st.write("Test Yourself [Here](https://docs.google.com/forms/d/1CAWF2l5TRPKMwVBMcjvxM2Hxo0rRreOTkQ7BD_j14ww/edit")
+    st.write("Test Yourself [Here](https://docs.google.com/forms/d/1CAWF2l5TRPKMwVBMcjvxM2Hxo0rRreOTkQ7BD_j14ww/edit)")
         
 if selection=="PolicyGuardian":
     st.subheader("Welcome to Policy Guardian")
