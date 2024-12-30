@@ -611,7 +611,7 @@ if selection=="Feedback":
      # Display pie chart
        fig, ax = plt.subplots(figsize=(5, 5))
        x=[i for i in sentiment.keys()]
-       y=[i for i in sentiment.vaues()]
+       y=[i for i in sentiment.values()]
        ax.pie(y, labels=x, autopct="%1.1f%%", startangle=90)
        # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
        st.write("Sentiment Analysis")
@@ -629,7 +629,7 @@ if selection=="Feedback":
        # Create a bar plot
        fig, ax = plt.subplots()
        x=[i for i in themes.keys()]
-       y=[i for i in themes.vaues()]
+       y=[i for i in themes.values()]
      
        ax.bar(y, x)
        
