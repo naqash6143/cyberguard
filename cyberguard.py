@@ -634,8 +634,8 @@ if selection=="Feedback":
        ax.set_ylabel('Values')
        # Rotate x-axis labels by 45 degrees
        plt.xticks(rotation=45)
-      # Display the plot in Streamlit
-      st.pyplot(fig)
+       # Display the plot in Streamlit
+       st.pyplot(fig)
  
  
  
