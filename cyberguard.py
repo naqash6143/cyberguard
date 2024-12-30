@@ -607,22 +607,22 @@ if selection=="Feedback":
        plt.axis('off')  # Hide axes
        plt.title("Wordcloud for CyberGuard Reviews")
        st.pyplot(plt)
-     with col2:
-      # Display pie chart
-        fig, ax = plt.subplots(figsize=(5, 5))
-        ax.pie(sentiment.values, labels=sentiment.keys(), autopct="%1.1f%%", startangle=90)
-        # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
-        st.write("Sentiment Analysis")
-        st.pyplot(fig)
- 
-     col1,col2=st.columns(2)
-     with col1:
-        # Display pie chart
-        fig, ax = plt.subplots(figsize=(5, 5))
-        ax.pie(emotions.values, labels=emotions.keys(), autopct="%1.1f%%", startangle=90)
-        # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
-        st.write("Emotion Analysis")
-        st.pyplot(fig)
+    with col2:
+     # Display pie chart
+       fig, ax = plt.subplots(figsize=(5, 5))
+       ax.pie(sentiment.values, labels=sentiment.keys(), autopct="%1.1f%%", startangle=90)
+       # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
+       st.write("Sentiment Analysis")
+       st.pyplot(fig)
+
+    col1,col2=st.columns(2)
+    with col1:
+       # Display pie chart
+       fig, ax = plt.subplots(figsize=(5, 5))
+       ax.pie(emotions.values, labels=emotions.keys(), autopct="%1.1f%%", startangle=90)
+       # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
+       st.write("Emotion Analysis")
+       st.pyplot(fig)
      with col2:
        # Create a bar plot
        fig, ax = plt.subplots()
