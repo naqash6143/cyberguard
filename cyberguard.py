@@ -3,21 +3,10 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-import requests
-import json
-import sys
-import os
-import colorama
-from time import sleep 
-import json
-from dotenv import load_dotenv
-# Load environment variables
-load_dotenv()
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
-# from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain_community.document_loaders import DirectoryLoader
 from langchain.prompts import PromptTemplate
@@ -28,10 +17,18 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from st_social_media_links import SocialMediaIcons
-# from docx import Document
-# from streamlit_extras.copy_to_clipboard import copy_to_clipboard
 from datetime import datetime
 from langchain_groq import ChatGroq
+
+from dotenv import load_dotenv
+# Load environment variables
+load_dotenv()
+import requests
+import json
+import sys
+import os
+import colorama
+from time import sleep 
 
 ##############################################################################################################################################################
 st.title("CYBER-GUARD")
