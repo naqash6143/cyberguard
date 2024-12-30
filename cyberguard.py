@@ -597,6 +597,8 @@ if selection=="Feedback":
     st.caption("We'd love to hear your thoughts! Your feedback helps us improve and provide a better experience. Please share your thoughts below — it only takes a moment!")
     st.write("Leave Feedback [Here](https://docs.google.com/forms/d/e/1FAIpQLSfvDDT9ZQ8_QHRr6GS01SqsFajlJgQtlKMCXO82JPto6h4v8g/viewform?usp=sharing)")
 
+    st.subheader("User Feedback on CyberGuard")
+
     col1,col2=st.columns(2)
     with col1:    
       # Display pie chart
