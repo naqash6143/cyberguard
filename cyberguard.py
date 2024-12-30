@@ -597,31 +597,28 @@ if selection=="Feedback":
     st.caption("We'd love to hear your thoughts! Your feedback helps us improve and provide a better experience. Please share your thoughts below — it only takes a moment!")
     st.write("Leave Feedback [Here](https://docs.google.com/forms/d/e/1FAIpQLSfvDDT9ZQ8_QHRr6GS01SqsFajlJgQtlKMCXO82JPto6h4v8g/viewform?usp=sharing)")
 
-    # Generate the word cloud
-    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
-    # Display the word cloud using matplotlib
-    plt.figure(figsize=(10, 5))
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis('off')  # Hide axes
-    plt.title("Wordcloud for CyberGuard Reviews")
-    st.pyplot(plt)
-  # Display pie chart
-    fig, ax = plt.subplots(figsize=(5, 5))
-    x=[i for i in sentiment.keys()]
-    y=[i for i in sentiment.values()]
-    ax.pie(y, labels=x, autopct="%1.1f%%", startangle=90)
-    # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
-    st.write("Sentiment Analysis")
-    st.pyplot(fig)
+    col1,col2=st.columns(2)
+    with col1:    
+      # Display pie chart
+      fig, ax = plt.subplots(figsize=(5, 5))
+      x=[i for i in sentiment.keys()]
+      y=[i for i in sentiment.values()]
+      ax.pie(y, labels=x, autopct="%1.1f%%", startangle=90)
+      # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
+      st.write("Sentiment Analysis")
+      st.pyplot(fig)
+    with col2:
 
-    # Display pie chart
-    fig, ax = plt.subplots(figsize=(5, 5))
-    x=[i for i in emotions.keys()]
-    y=[i for i in emotions.values()]
-    ax.pie(y, labels=x, autopct="%1.1f%%", startangle=90)
-    # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
-    st.write("Emotion Analysis")
-    st.pyplot(fig)
+      # Display pie chart
+      fig, ax = plt.subplots(figsize=(5, 5))
+      x=[i for i in emotions.keys()]
+      y=[i for i in emotions.values()]
+      ax.pie(y, labels=x, autopct="%1.1f%%", startangle=90)
+      # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
+      st.write("Emotion Analysis")
+      st.pyplot(fig)
+    
+ 
     # Create a bar plot
     fig, ax = plt.subplots()
     x=[i for i in themes.keys()]
@@ -639,6 +636,13 @@ if selection=="Feedback":
     st.pyplot(fig)
 
 
-
+   # Generate the word cloud
+    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
+    # Display the word cloud using matplotlib
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis('off')  # Hide axes
+    plt.title("Wordcloud for CyberGuard Reviews")
+    st.pyplot(plt)
 
 
