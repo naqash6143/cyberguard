@@ -671,6 +671,19 @@ if selection=="Feedback":
       st.write(recommendations['improvement_suggestions']['SafeSocial'])
     with col3:
       st.write(recommendations['improvement_suggestions']['Policy Guardian'])
-#'Education Portal': ['adding interactive modules like quizzes and simulations', 'including gamified elements to make learning more engaging'], 'NCA CrimeAssist': ['including a direct reporting feature for non-emergency incidents', 'generating a report draft for law enforcement'], 'Malicious File Scanner': ['adding a feature to schedule regular scans', 'including cloud storage scanning capabilities'], 'Cyber Awareness Chatbot': ['adding a voice-based interaction option', 'offering downloadable summaries of conversations']}, 'innovation_opportunities': ['integrating AI-based risk prediction models', 'developing gamified cybersecurity training programs', 'creating a community forum for users to share best practices and ask questions']}
+    col1,col2,col3=st.columns(3)
+    with col1:
+      st.write(recommendations['improvement_suggestions']['Education Portal'])
+    with col2:
+      st.write(recommendations['improvement_suggestions']['NCA CrimeAssist'])
+    with col3:
+      st.write(recommendations['improvement_suggestions']['Malicious File Scanner'])
+    col1,col2,col3=st.columns(3)
+    with col1:
+      st.write(recommendations['improvement_suggestions']['Cyber Awareness Chatbot'])
+    with col2:
+      st.write(recommendations['improvement_suggestions']['innovation_opportunities'])
+    #with col3:
+      #st.write(recommendations['improvement_suggestions']['Malicious File Scanner'])
 
 
