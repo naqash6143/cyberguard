@@ -661,5 +661,5 @@ if selection=="Feedback":
       # Display the plot in Streamlit
       st.pyplot(fig)
 
-
-
+    with col2:
+     st.write("")
