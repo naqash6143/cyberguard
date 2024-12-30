@@ -633,7 +633,7 @@ if selection=="Feedback":
        x=[i for i in themes.keys()]
        y=[i for i in themes.values()]
      
-       ax.barh(y, x)
+       ax.barh(x,y)
        
        # Adding title and labels
        ax.set_title('Themes Analysis')
