@@ -645,4 +645,21 @@ if selection=="Feedback":
       plt.title("Wordcloud for CyberGuard Reviews")
       st.pyplot(plt)
 
+    col1,col2=st.columns(2)
+    with col1:
+      # Create a bar plot
+      fig, ax = plt.subplots()
+      x=[i for i in user_activity.keys()]
+      y=[i for i in user_activity.values()]
+      ax.barh(x,y)
+      # Adding title and labels
+      ax.set_title('User Activity on the CyberGuard')
+      ax.set_xlabel('Module')
+      ax.set_ylabel('Values')
+      # Rotate x-axis labels by 45 degrees
+      plt.xticks(rotation=90)
+      # Display the plot in Streamlit
+      st.pyplot(fig)
+
+
 
