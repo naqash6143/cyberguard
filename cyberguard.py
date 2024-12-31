@@ -161,14 +161,7 @@ if selection=="Dashboard":
 
 
     
- 1) D
-2) B
-3)A
-4) A
-5)C
-6) A
-7)A
-8)A
+ 
  
  
  
