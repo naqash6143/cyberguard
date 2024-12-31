@@ -146,13 +146,24 @@ api= os.getenv("VT_API_KEY")
 selection=st.sidebar.selectbox("Select",("Dashboard","NCA CrimeAssist","SafeSocial","Cyber Awareness Chatbot","Malicious File Scanner","Education Portal","PolicyGuardian","Feedback"))
 
 if selection=="Dashboard":
+    
     st.subheader("Welcome to Dashboard")
-    sheet_name = 'Cyber Quiz (Responses)' # replace with your own sheet name
-    sheet_id = '1QE9qW7DxaYp44RvTM0YUtpRFoe4GPt9i0WX-_OruXHM' # replace with your sheet's ID
+ #https://docs.google.com/spreadsheets/d/14KEJcHSMJf0qiXhSjUJpNdBWORHWUUpgQU-yLtp8xJI/edit?gid=27636577#gid=27636577   
+ sheet_name = 'Cyber Quiz (Responses)' # replace with your own sheet name
+    sheet_id = '14KEJcHSMJf0qiXhSjUJpNdBWORHWUUpgQU-yLtp8xJI' # replace with your sheet's ID
     
     url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
-    df=pd.read_csv(url,names=["Timestamp","Q1","Q2"])
-    # df.values
+    df=pd.read_csv(url)
+    st.write(df)
+
+
+    
+ 
+ 
+ 
+ 
+ 
+ # df.values
     # st.write(df.iloc[-1,1:].values)
     responses=df.iloc[-1,1:].values
     correct=[]
