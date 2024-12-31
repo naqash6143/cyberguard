@@ -194,7 +194,7 @@ if selection=="Dashboard":
         # sns.barplot(correct,ax=ax)
         ax.pie(correct, labels=["Correct","Wrong"], autopct="%1.1f%%", startangle=90)
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
-        st.write("Risk Awareness Score")
+        st.write("Cyber Essentials Score")
         st.pyplot(fig)
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/1otwGsbHuM9Ju_afEoOW6t__Z6dZ36HZmYJ7kHhi0on8/edit)")
     with col3:
@@ -203,7 +203,7 @@ if selection=="Dashboard":
         # sns.barplot(correct,ax=ax)
         ax.pie(correct, labels=["Correct","Wrong"], autopct="%1.1f%%", startangle=90)
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
-        st.write("Cyber Awareness Score")
+        st.write("Cyber Advanced Score")
         st.pyplot(fig)
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/1CAWF2l5TRPKMwVBMcjvxM2Hxo0rRreOTkQ7BD_j14ww/edit)")
 
