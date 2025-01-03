@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+st.write("✅")
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
@@ -233,9 +233,9 @@ if selection=="Dashboard":
     with col1:
         st.caption("Fundamentals")
         # st.write("The following list won’t indent no matter what I try:")
-        st.markdown("🔑 Educate yourself and enhance cyber knowlegde")
-        st.markdown("🔑 Keep system software updated")
-        st.markdown("🔑 Use secure internet connections")
+        st.markdown("✅ Educate yourself and enhance cyber knowlegde")
+        st.markdown("✅ Keep system software updated")
+        st.markdown("✅ Use secure internet connections")
         st.markdown("🔑 Secure web browsing and email")
         st.markdown("🔑 Implement data retention, loss recovery capability")
         st.markdown("🔑 Encrypt data and devices")
