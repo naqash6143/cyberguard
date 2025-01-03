@@ -173,6 +173,7 @@ if selection=="Dashboard":
  
     # st.write(df.iloc[-1,1:].values)
     responses=df.iloc[-1,1:].values
+    st.write(responses)
     correct=[]
     # wrong=[]
     for i,j in zip(responses,advanced_key):
