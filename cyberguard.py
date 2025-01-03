@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-st.write("✅")
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
@@ -32,7 +31,7 @@ import colorama
 from time import sleep 
 #st.set_page_config(page_title="CyberGuard", page_icon="🔒", layout="centered", initial_sidebar_state="auto", menu_items=None)
 ##############################################################################################################################################################
-st.title("CYBER-GUARD")
+st.title("💂‍♂️CYBER-GUARD")
 
 #loader=PyPDFDirectoryLoader("./knowledgebase_for_chatbot/")
 #data = loader.load()
