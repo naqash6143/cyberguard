@@ -139,10 +139,22 @@ url = r'https://www.virustotal.com/vtapi/v2/file/scan'
 api= os.getenv("VT_API_KEY")
 ######################################################################################################################################
 
+advanced_key = [
+    "03/01/2025 15:16:46", 
+    "False videos or audio files created using advanced deep learning techniques", 
+    "By encrypting sensitive user data", 
+    "They predict defense strategies and exploit systems with new methods", 
+    "Neural networks and Generative Adversarial Networks", 
+    "Identifying the scope of the breach and indicators of compromise", 
+    "Always using a VPN to access the internal network", 
+    "Keeping personal data secure from unauthorized processing", 
+    "Regularly patching cloud-based systems", 
+    "Never trust, always verify user credibility", 
+    "Understand the location and roles of OT devices"
+]
 
 
-
-
+####################################################
 selection=st.sidebar.selectbox("Select",("Dashboard","NCA CrimeAssist","SafeSocial","Cyber Awareness Chatbot","Malicious File Scanner","Education Portal","PolicyGuardian","Feedback"))
 
 if selection=="Dashboard":
@@ -158,21 +170,13 @@ if selection=="Dashboard":
  
     url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
     df=pd.read_csv(url)
-    #st.write(df)
-
-
-    
+    st.write(df.iloc[-1,1:])
  
- 
- 
- 
- 
- # df.values
     # st.write(df.iloc[-1,1:].values)
     responses=df.iloc[-1,1:].values
     correct=[]
     # wrong=[]
-    for i,j in zip(responses,["A", "A"]):
+    for i,j in zip(responses,advance_key):
         if i==j:
             correct.append(1)
         else:
