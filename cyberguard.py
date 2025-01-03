@@ -30,7 +30,7 @@ import sys
 import os
 import colorama
 from time import sleep 
-st.button(":lock:")
+
 ##############################################################################################################################################################
 st.title("CYBER-GUARD")
 
@@ -233,7 +233,7 @@ if selection=="Dashboard":
     with col1:
         st.caption("Fundamentals")
         # st.write("The following list won’t indent no matter what I try:")
-        st.markdown("- Educate yourself and enhance cyber knowlegdet")
+        st.markdown("🔒 Educate yourself and enhance cyber knowlegdet")
         st.markdown("- Keep system software updated")
         st.markdown("- Use secure internet connections")
         st.markdown("- Secure web browsing and email")
