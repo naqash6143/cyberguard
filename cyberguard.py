@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
@@ -217,10 +218,11 @@ if selection=="Dashboard":
         st.write("Cyber Advanced Score")
         st.pyplot(fig)
         if c<=3:
-         st.write("🚨")
-
-         if c==10:
-          st.write(":lock:🔥")
+         st.write("🙄")
+        if c>3 and c<=8:
+         st.write("😋")
+        if c==10:
+         st.write("😍")
          
          #st.button(":thumbsup:")
 
