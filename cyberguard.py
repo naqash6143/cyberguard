@@ -217,7 +217,7 @@ if selection=="Dashboard":
         st.write("Cyber Advanced Score")
         st.pyplot(fig)
         if c>7:
-        st.button(":thumbsup:")
+         st.button(":thumbsup:")
 
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSd_xz8xAvkVodtLzBqmXyWZBT50-W0VnFllFFyg-DePVuh8ww/viewform)")
         st.subheader("Cyber Security Guidelines")
