@@ -215,10 +215,11 @@ if selection=="Dashboard":
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
         st.write("Cyber Advanced Score")
         st.pyplot(fig)
+        if c>7:
+        st.button(":thumbsup:")
+
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSd_xz8xAvkVodtLzBqmXyWZBT50-W0VnFllFFyg-DePVuh8ww/viewform)")
-    if c>7:
-     st.button(":thumbsup:")
-    st.subheader("Cyber Security Guidelines")
+        st.subheader("Cyber Security Guidelines")
     
     col1,col2,col3=st.columns(3)
     with col1:
