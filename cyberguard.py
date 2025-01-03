@@ -170,13 +170,13 @@ if selection=="Dashboard":
  
     url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
     df=pd.read_csv(url)
-    st.write(df.iloc[-1,1:])
+    st.write(df.iloc[-1,1:].values)
  
     # st.write(df.iloc[-1,1:].values)
     responses=df.iloc[-1,1:].values
     correct=[]
     # wrong=[]
-    for i,j in zip(responses,advance_key):
+    for i,j in zip(responses,advanced_key):
         if i==j:
             correct.append(1)
         else:
