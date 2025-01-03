@@ -1,3 +1,4 @@
+👨‍🏫🧾🤖👮‍♂️🕵️‍♂️
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -311,10 +312,10 @@ if selection=="NCA CrimeAssist":
     col1,col2=st.columns(2)
     with col1:
         st.html("<h4>Report an urgent crime</h4>")
-        st.write("In an emergency always call 999")
+        st.write("In an emergency always 📱call 999")
     with col2:
         st.html("<h4>Report non-urgent crime</h4>")
-        st.write("Please call your local police on 101")
+        st.write("Please 📱 call your local police on 101")
     col1,col2=st.columns(2)
     with col1:
         st.html("<h4>Report a crime anonymously</h4>")
@@ -322,10 +323,10 @@ if selection=="NCA CrimeAssist":
 
     with col2:
         st.html("<h4>For General enquiries</h4>")
-        st.write("Reach us via [email](communication@nca.gov.uk) or Telephone: 0370 496 7622 (available 24/7) not used for outgoing calls")
+        st.write("Reach us via [📧](communication@nca.gov.uk) or Telephone: 0370 496 7622 (available 24/7) not used for outgoing calls")
         
     
-    st.html("<h4>Postal Address</h4>")
+    st.html("<h4>📮 Postal Address</h4>")
     st.write("PO Box 8000, London, SE11 5EN")
 
     st.html("<h4>Scam alert: fake letters and emails</h4>")
