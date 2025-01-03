@@ -197,7 +197,7 @@ if selection=="Dashboard":
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
         st.write("Cyber Fundamental Score")
         st.pyplot(fig)
-        st.info('This is a purely informational message', icon="ℹ️")
+        st.info(icon="🔥")
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSe9__MDLd4zpgVskVXnjN2TxbWZgwxz5-Jtcq6YS_VCWfKAEg/viewform?usp=dialog)")
     with col2:
         # Display pie chart
