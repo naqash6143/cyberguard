@@ -174,7 +174,7 @@ if selection=="Dashboard":
     # st.write(df.iloc[-1,1:].values)
     responses=df.iloc[-1,1:].values
     st.write(responses)
-    st.write(list(set(correct)))
+    
     correct=[]
     # wrong=[]
     for i,j in zip(responses,advanced_key):
@@ -183,6 +183,7 @@ if selection=="Dashboard":
         else:
             correct.append(0)
     st.write(correct)
+    st.write(list(set(correct)))
     col1,col2,col3=st.columns(3)
     # st.write(correct)
     with col1:
