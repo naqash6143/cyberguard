@@ -196,7 +196,7 @@ if selection=="Dashboard":
         # Display pie chart
         fig, ax = plt.subplots(figsize=(5, 5))
         # sns.barplot(correct,ax=ax)
-        ax.pie(correct, labels=["Correct","Wrong"], autopct="%1.1f%%", startangle=90)
+        ax.pie(correct,  autopct="%1.1f%%", startangle=90)
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
         st.write("Cyber Essentials Score")
         st.pyplot(fig)
@@ -205,7 +205,7 @@ if selection=="Dashboard":
         # Display pie chart
         fig, ax = plt.subplots(figsize=(5, 5))
         # sns.barplot(correct,ax=ax)
-        ax.pie(correct, labels=["Correct","Wrong"], autopct="%1.1f%%", startangle=90)
+        ax.pie(correct,  autopct="%1.1f%%", startangle=90)
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
         st.write("Cyber Advanced Score")
         st.pyplot(fig)
