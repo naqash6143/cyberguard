@@ -180,7 +180,7 @@ if selection=="Dashboard":
             correct.append(1)
         else:
             correct.append(1)
-    
+    st.write(correct)
     col1,col2,col3=st.columns(3)
     # st.write(correct)
     with col1:
