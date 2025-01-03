@@ -139,8 +139,7 @@ url = r'https://www.virustotal.com/vtapi/v2/file/scan'
 api= os.getenv("VT_API_KEY")
 ######################################################################################################################################
 
-advanced_key = [
-    "03/01/2025 15:16:46", 
+advanced_key = [ 
     "False videos or audio files created using advanced deep learning techniques", 
     "By encrypting sensitive user data", 
     "They predict defense strategies and exploit systems with new methods", 
@@ -170,7 +169,7 @@ if selection=="Dashboard":
  
     url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
     df=pd.read_csv(url)
-    st.write(df.iloc[-1,1:].values)
+    st.write(df.iloc[-1,1:-1].values)
  
     # st.write(df.iloc[-1,1:].values)
     responses=df.iloc[-1,1:].values
