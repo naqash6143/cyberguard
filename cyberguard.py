@@ -183,7 +183,11 @@ if selection=="Dashboard":
         else:
             correct.append(0)
     st.write(correct)
+    c=correct.count(1)
+    w=correct.count(0)
+ 
     st.write(list(set(correct)))
+ 
     col1,col2,col3=st.columns(3)
     # st.write(correct)
     with col1:
@@ -208,7 +212,7 @@ if selection=="Dashboard":
         # Display pie chart
         fig, ax = plt.subplots(figsize=(5, 5))
         # sns.barplot(correct,ax=ax)
-        ax.pie(list(set(correct)))
+        ax.pie([c,w])
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
         st.write("Cyber Advanced Score")
         st.pyplot(fig)
