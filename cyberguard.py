@@ -197,10 +197,8 @@ if selection=="Dashboard":
         # Sample data
         labels = ['Correct', 'Incorrect']
         values = [c, w ]  # Example percentages or scores
-        
         # Create a donut chart
         fig1 = go.Figure(data=[go.Pie(values=values, hole=0.7)])
-        
         # Customize layout
         fig1.update_traces(
             hoverinfo='label+percent',
@@ -210,6 +208,7 @@ if selection=="Dashboard":
         )
         fig1.update_layout(title_text="Cyber Advanced Score",width=300, height=300)
         st.plotly_chart(fig1)
+        plt.show()
         if c<=3:
          st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🙄")
         if c>3 and c<=8:
