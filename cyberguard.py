@@ -711,7 +711,7 @@ if selection=="PolicyGuardian":
     st.subheader("Welcome to Policy Guardian 🧾")
     text=st.text_area("Paste Policy Here")
     res=""
-    if st.button("Analyze 🔍"):
+    if st.button("Analyze 🔍") and text!"":
         res=llm.invoke(get_data_privacy_prompt(text))
         st.write(res.content)
         res=res.content
