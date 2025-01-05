@@ -363,7 +363,8 @@ if selection=="Dashboard":
     with col2:
         st.caption("Essentials")
         # st.write("The following list won’t indent no matter what I try:")
-        st.markdown("📢 Create complex passwords, protect passwords and change them regularly, do not reuse passwords across multiple systems and do not share passwords with colleagues.")
+        st.markdown("📢 Create complex passwords, protect passwords and change them regularly")
+        st.markdown("📢 Do not reuse passwords across multiple systems and do not share passwords with colleagues.")
         st.markdown("📢 Use multi-factor authentication.")
         st.markdown("📢 Do not use public/free Wi-Fi – personal hotspots are safer.")
         st.markdown("📢 Use VPN and dongles (small, removable devices that have secure access to wireless broadband) when travelling.")
