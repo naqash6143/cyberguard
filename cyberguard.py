@@ -236,7 +236,7 @@ if selection=="Dashboard":
         if c>3 and c<=8:
          st.write("😋")
         if c==10:
-         st.write("      ----------------------------------    😍")
+         st.write("          😍")
 
      
      
