@@ -218,7 +218,7 @@ if selection=="Dashboard":
         values = [70, 20, ]  # Example percentages or scores
         
         # Create a donut chart
-        fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=0.7)])
+        fig = go.Figure(data=[go.Pie(values=values, hole=0.7)])
         
         # Customize layout
         fig.update_traces(
