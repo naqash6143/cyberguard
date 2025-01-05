@@ -295,7 +295,7 @@ if selection=="Dashboard":
         fig = go.Figure(data=[go.Pie(values=values, hole=0.7)])
         
         # Customize layout
-        fig3.update_traces(
+        fig.update_traces(
             hoverinfo='label+percent',
             textinfo='value+percent',
             textfont_size=15,
