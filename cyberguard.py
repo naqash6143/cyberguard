@@ -227,7 +227,7 @@ if selection=="Dashboard":
             hoverinfo='label+percent',
             #textinfo='value+percent',
             textfont_size=15,
-            marker=dict(colors=['#6BAED6', '#FD8D3C', '#74C476'], line=dict(color='#FFFFFF', width=2))
+            marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
         )
         fig.update_layout(title_text="Quiz Score Distribution",width=300, height=300)
         st.plotly_chart(fig)
