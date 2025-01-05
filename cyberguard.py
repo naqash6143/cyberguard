@@ -250,7 +250,7 @@ if selection=="Dashboard":
         # Customize layout
         fig2.update_traces(
             hoverinfo='label+percent',
-            textinfo='value+percent',
+            #textinfo='value+percent',
             textfont_size=15,
             marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
         )
@@ -297,7 +297,7 @@ if selection=="Dashboard":
         # Customize layout
         fig.update_traces(
             hoverinfo='label+percent',
-            textinfo='value+percent',
+            #textinfo='value+percent',
             textfont_size=15,
             marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
         )
