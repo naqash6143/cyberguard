@@ -206,7 +206,7 @@ if selection=="Dashboard":
             textfont_size=15,
             marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
         )
-        fig1.update_layout(title_text="Cyber Advanced Score",width=300, height=300)
+        fig1.update_layout(title_text="yber Fundamental Score",width=300, height=300)
         st.plotly_chart(fig1)
         plt.show()
         if c<=3:
@@ -254,7 +254,7 @@ if selection=="Dashboard":
             textfont_size=15,
             marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
         )
-        fig2.update_layout(title_text="Cyber Advanced Score",width=302, height=302)
+        fig2.update_layout(title_text="Cyber Essentials Score",width=302, height=302)
         st.plotly_chart(fig2)
         plt.show()
         if c<=3:
@@ -281,7 +281,7 @@ if selection=="Dashboard":
         # sns.barplot(result,ax=ax)
         #ax.pie(result,  autopct="%1.1f%%", startangle=90)
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
-        st.write("Cyber Essentials Score")
+        #st.write("Cyber Essentials Score")
         #st.pyplot(fig)
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSck_p-w_8cLQnIeU6IrHqoGZjcy8h_3taAOc083uhvw4l5kBA/viewform?usp=dialog)")
     with col3:
