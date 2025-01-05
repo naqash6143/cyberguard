@@ -1,11 +1,9 @@
 import streamlit as st
-#st.write("👨‍🏫🧾🤖👮‍♂️🕵️‍♂️")
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.graph_objects as go
-
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
@@ -475,7 +473,7 @@ if selection=="SafeSocial":
 
 
 if selection=="Cyber Awareness Chatbot":
-    st.subheader("Cyber Awareness Chatbot")
+    st.subheader("Cyber Awareness Chatbot 🤖")
     query=st.text_input("Write Query Here")
     if st.button("Submit"):
         res=llm.invoke(get_prompt(query))
@@ -559,7 +557,7 @@ def get_url_scan_report(api_key, scan_id):
 if selection=="Malicious File Scanner":
     selected_option=st.selectbox("Select",("File Scanner", "URL Scanner"))
     if selected_option=="File Scanner":
-        st.subheader("Malicious File Scanner")
+        st.subheader("Malicious File Scanner 🕵️‍♂️")
         file=st.file_uploader("Select a File")
         if file!=None and st.button("Analyze"): 
             scan_id = scan_file(api, file.name)
@@ -567,7 +565,7 @@ if selection=="Malicious File Scanner":
             st.write(report)
             
     if selected_option=="URL Scanner":
-        st.subheader("Malicious URL Scanner")
+        st.subheader("Malicious URL Scanner 🕵️‍♂️")
         url=st.text_input("Paste URL Here")
         if st.button("Analyze") and url!=None:
             scan_id=scan_url(api, url)
@@ -575,7 +573,7 @@ if selection=="Malicious File Scanner":
 
 ########################################################################################################################################################################################
 if selection=="Education Portal":
-    st.subheader("Welcome to Education Portal")
+    st.subheader("Welcome to Education Portal 🏫")
     st.write("")
     st.html(
     "<h4>Fundamentals</h4>")
@@ -710,7 +708,7 @@ if selection=="Education Portal":
     st.write("Test Yourself [Here](https://docs.google.com/forms/d/1CAWF2l5TRPKMwVBMcjvxM2Hxo0rRreOTkQ7BD_j14ww/edit)")
         
 if selection=="PolicyGuardian":
-    st.subheader("Welcome to Policy Guardian")
+    st.subheader("Welcome to Policy Guardian 🧾")
     text=st.text_area("Paste Policy Here")
     res=""
     if st.button("Analyze"):
@@ -742,7 +740,7 @@ user_activity= {'Dashboard':17,'SafeSocial':13,'PolicyGuardian':12,'Education Po
 recommendations={'improvement_suggestions': {'Dashboard': ['adding automated reminders for updates', 'including peer benchmarks for the Cyber Fundamental Score'], 'SafeSocial': ['adding an AI-based risk prediction model', 'including more cybersecurity tips to the Cyber Security Guidelines'], 'Policy Guardian': ['including certifications for completing modules', 'expanding the quiz library with scenario-based questions'], 'Education Portal': ['adding interactive modules like quizzes and simulations', 'including gamified elements to make learning more engaging'], 'NCA CrimeAssist': ['including a direct reporting feature for non-emergency incidents', 'generating a report draft for law enforcement'], 'Malicious File Scanner': ['adding a feature to schedule regular scans', 'including cloud storage scanning capabilities'], 'Cyber Awareness Chatbot': ['adding a voice-based interaction option', 'offering downloadable summaries of conversations']}, 'innovation_opportunities': ['integrating AI-based risk prediction models', 'developing gamified cybersecurity training programs', 'creating a community forum for users to share best practices and ask questions']}
 
 if selection=="Feedback":
-    st.subheader("Welcome")
+    st.subheader("Welcome to User Feedback Section📝")
     st.caption("We'd love to hear your thoughts! Your feedback helps us improve and provide a better experience. Please share your thoughts below — it only takes a moment!")
     st.write("Leave Feedback [Here](https://docs.google.com/forms/d/e/1FAIpQLSfvDDT9ZQ8_QHRr6GS01SqsFajlJgQtlKMCXO82JPto6h4v8g/viewform?usp=sharing)")
 
