@@ -193,28 +193,100 @@ if selection=="Dashboard":
  
     col1,col2,col3=st.columns(3)
     # st.write(correct)
-    with col1:
-        # Display pie chart
-        fig, ax = plt.subplots(figsize=(5, 5))
+    with col1: 
+        # Sample data
+        labels = ['Correct', 'Incorrect']
+        values = [c, w ]  # Example percentages or scores
+        
+        # Create a donut chart
+        fig = go.Figure(data=[go.Pie(values=values, hole=0.7)])
+        
+        # Customize layout
+        fig.update_traces(
+            hoverinfo='label+percent',
+            #textinfo='value+percent',
+            textfont_size=15,
+            marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
+        )
+        fig.update_layout(title_text="Cyber Advanced Score",width=300, height=300)
+        st.plotly_chart(fig)
+        if c<=3:
+         st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🙄")
+        if c>3 and c<=8:
+         st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😊")
+        if c==10:
+         st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😍")
+
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     # Display pie chart
+        #fig, ax = plt.subplots(figsize=(5, 5))
         # sns.barplot(result,ax=ax)
-        ax.pie(result, autopct="%1.1f%%", startangle=90)
+        #ax.pie(result, autopct="%1.1f%%", startangle=90)
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
-        st.write("Cyber Fundamental Score")
-        st.pyplot(fig)
-        st.write("🔥")
+        #st.write("Cyber Fundamental Score")
+        #st.pyplot(fig)
+        #st.write("🔥")
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSe9__MDLd4zpgVskVXnjN2TxbWZgwxz5-Jtcq6YS_VCWfKAEg/viewform?usp=dialog)")
     with col2:
+        
+        
+     
+     
+          
+        # Sample data
+        labels = ['Correct', 'Incorrect']
+        values = [c, w ]  # Example percentages or scores
+        
+        # Create a donut chart
+        fig = go.Figure(data=[go.Pie(values=values, hole=0.7)])
+        
+        # Customize layout
+        fig.update_traces(
+            hoverinfo='label+percent',
+            #textinfo='value+percent',
+            textfont_size=15,
+            marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
+        )
+        fig.update_layout(title_text="Cyber Advanced Score",width=300, height=300)
+        st.plotly_chart(fig)
+        if c<=3:
+         st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🙄")
+        if c>3 and c<=8:
+         st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😊")
+        if c==10:
+         st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😍")
+
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
         # Display pie chart
-        fig, ax = plt.subplots(figsize=(5, 5))
+        #fig, ax = plt.subplots(figsize=(5, 5))
         # sns.barplot(result,ax=ax)
-        ax.pie(result,  autopct="%1.1f%%", startangle=90)
+        #ax.pie(result,  autopct="%1.1f%%", startangle=90)
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
         st.write("Cyber Essentials Score")
-        st.pyplot(fig)
+        #st.pyplot(fig)
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSck_p-w_8cLQnIeU6IrHqoGZjcy8h_3taAOc083uhvw4l5kBA/viewform?usp=dialog)")
     with col3:
         
-        
+     
         # Sample data
         labels = ['Correct', 'Incorrect']
         values = [c, w ]  # Example percentages or scores
