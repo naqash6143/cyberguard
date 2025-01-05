@@ -4,6 +4,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import plotly.graph_objects as go
+
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
@@ -29,6 +31,7 @@ import json
 import sys
 import os
 import colorama
+
 from time import sleep 
 st.set_page_config(page_title="CyberGuard", page_icon="🔒", layout="centered", initial_sidebar_state="auto", menu_items=None)
 ##############################################################################################################################################################
@@ -211,11 +214,10 @@ if selection=="Dashboard":
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSck_p-w_8cLQnIeU6IrHqoGZjcy8h_3taAOc083uhvw4l5kBA/viewform?usp=dialog)")
     with col3:
         
-        import plotly.graph_objects as go
-
+        
         # Sample data
         labels = ['Correct', 'Incorrect']
-        values = [70, 20, ]  # Example percentages or scores
+        values = [c, w ]  # Example percentages or scores
         
         # Create a donut chart
         fig = go.Figure(data=[go.Pie(values=values, hole=0.7)])
@@ -223,7 +225,7 @@ if selection=="Dashboard":
         # Customize layout
         fig.update_traces(
             hoverinfo='label+percent',
-            textinfo='value+percent',
+            #textinfo='value+percent',
             textfont_size=15,
             marker=dict(colors=['#6BAED6', '#FD8D3C', '#74C476'], line=dict(color='#FFFFFF', width=2))
         )
