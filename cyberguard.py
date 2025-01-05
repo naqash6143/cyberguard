@@ -464,6 +464,7 @@ if selection=="NCA CrimeAssist":
     social_media_icons.render()
 ##########################################################################################################################################
 if selection=="SafeSocial":
+    st.subheader("Safe Your Social Identity 📋")
     text=st.text_input("Put Concern Here")
     if st.button("Guide"):
         res=llm.invoke(get_sm_footprints_prompt(text))
