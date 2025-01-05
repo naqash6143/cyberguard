@@ -384,7 +384,7 @@ if selection=="Dashboard":
         st.markdown("📢 Do not use public phone chargers to avoid the risk of ‘juice jacking’.")
         st.markdown("📢 Check for ‘https:’ or a padlock icon on your browser’s URL bar to verify that a site is secure before entering any personal information.")
         st.markdown("📢 Understand the permissions you are granting to apps (eg, tracking your location and access to your contacts or camera).")
-        st.markdown("📢 Report all phishing/spear phishing to the person designated to deal with cybersecurity concerns, even if the email is sent to your personal account rather than work.")
+        st.markdown("📢 Report all phishing/spear phishing to the person designated to deal with cybersecurity concerns")
         st.markdown("📢 Uninstall apps you are not using.")
         st.markdown("📢 Do not use public/free Wi-Fi – personal hotspots are safer.")
         st.markdown("📢 Use VPN and dongles (small, removable devices that have secure access to wireless broadband) when travelling.")
