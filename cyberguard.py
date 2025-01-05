@@ -256,6 +256,7 @@ if selection=="Dashboard":
         )
         fig2.update_layout(title_text="Cyber Advanced Score",width=300, height=300)
         st.plotly_chart(fig2)
+        plt.show()
         if c<=3:
          st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🙄")
         if c>3 and c<=8:
@@ -287,21 +288,22 @@ if selection=="Dashboard":
         
      
         # Sample data
-        #labels = ['Correct', 'Incorrect']
-        #values = [c, w ]  # Example percentages or scores
+        labels = ['Correct', 'Incorrect']
+        values = [c, w ]  # Example percentages or scores
         
         # Create a donut chart
-        #fig3 = go.Figure(data=[go.Pie(values=values, hole=0.7)])
+        fig3 = go.Figure(data=[go.Pie(values=values, hole=0.7)])
         
         # Customize layout
-        #fig3.update_traces(
-            #hoverinfo='label+percent',
-           # #textinfo='value+percent',
-          #  textfont_size=15,
-         #   marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
-        #)
-        #fig3.update_layout(title_text="Cyber Advanced Score",width=300, height=300)
-        #st.plotly_chart(fig3)
+        fig3.update_traces(
+            hoverinfo='label+percent',
+            textinfo='value+percent',
+            textfont_size=15,
+            marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
+        )
+        fig3.update_layout(title_text="Cyber Advanced Score",width=300, height=300)
+        st.plotly_chart(fig3)
+        plt.show()
         if c<=3:
          st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🙄")
         if c>3 and c<=8:
