@@ -227,9 +227,7 @@ if selection=="Dashboard":
             textfont_size=15,
             marker=dict(colors=['#6BAED6', '#FD8D3C', '#74C476'], line=dict(color='#FFFFFF', width=2))
         )
-        fig.update_layout(title_text="Quiz Score Distribution",
-                          width=300,  # Set a smaller width
-                          height=300  # Set a smaller height)
+        fig.update_layout(title_text="Quiz Score Distribution",width=300, height=300)
         st.plotly_chart(fig)
      
      
