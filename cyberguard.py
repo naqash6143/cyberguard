@@ -210,19 +210,52 @@ if selection=="Dashboard":
         st.pyplot(fig)
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSck_p-w_8cLQnIeU6IrHqoGZjcy8h_3taAOc083uhvw4l5kBA/viewform?usp=dialog)")
     with col3:
+        
+        import plotly.graph_objects as go
+
+        # Sample data
+        labels = ['Correct', 'Incorrect']
+        values = [70, 20, ]  # Example percentages or scores
+        
+        # Create a donut chart
+        fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=0.7)])
+        
+        # Customize layout
+        fig.update_traces(
+            hoverinfo='label+percent',
+            textinfo='value+percent',
+            textfont_size=15,
+            marker=dict(colors=['#6BAED6', '#FD8D3C', '#74C476'], line=dict(color='#FFFFFF', width=2))
+        )
+        fig.update_layout(title_text="Quiz Score Distribution")
+        st.plotly_chart(fig)
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
         # Display pie chart
-        fig, ax = plt.subplots(figsize=(5, 5))
+        #fig, ax = plt.subplots(figsize=(5, 5))
         # sns.barplot(correct,ax=ax)
-        ax.pie([c,w])
+        #ax.pie([c,w])
         # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
-        st.write("Cyber Advanced Score")
-        st.pyplot(fig)
-        if c<=3:
-         st.write("🙄")
-        if c>3 and c<=8:
-         st.write("😋")
-        if c==10:
-         st.write("😍")
+        #st.write("Cyber Advanced Score")
+        #st.pyplot(fig)
+        #if c<=3:
+        # st.write("🙄")
+        #if c>3 and c<=8:
+        # st.write("😋")
+        #if c==10:
+        # st.write("😍")
          
          #st.button(":thumbsup:")
 
