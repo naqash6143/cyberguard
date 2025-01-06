@@ -33,26 +33,27 @@ import colorama
 from time import sleep 
 st.set_page_config(page_title="CyberGuard", page_icon="🔒", layout="centered", initial_sidebar_state="auto", menu_items=None)
 ##############################################################################################################################################################
-st.title("💂‍♂️CYBER-GUARD")
+st.title("CYBER-GUARD 💂‍♂️")
 
-#loader=PyPDFDirectoryLoader("./knowledgebase_for_chatbot/")
-#data = loader.load()
+################################################################################## RAG ###########################################################################
+loader=PyPDFDirectoryLoader("./knowledgebase_for_chatbot/")
+data = loader.load()
 #split the extracted data into text chunks using the text_splitter, which splits the text based on the specified number of characters and overlap
-#text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-#text_chunks = text_splitter.split_documents(data)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+text_chunks = text_splitter.split_documents(data)
 
 #download the embeddings to use to represent text chunks in a vector space, using the pre-trained model "sentence-transformers/all-MiniLM-L6-v2"
-#embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 # create embeddings for each text chunk using the FAISS class, which creates a vector index using FAISS and allows efficient searches between vectors
-#vector_store = FAISS.from_documents(text_chunks, embedding=embeddings)
+vector_store = FAISS.from_documents(text_chunks, embedding=embeddings)
 
 # Retrieve and generate using the relevant snippets of the blog.
-#retriever = new_vector_store.as_retriever()
-#prompt = hub.pull("rlm/rag-prompt")
+retriever = new_vector_store.as_retriever()
+prompt = hub.pull("rlm/rag-prompt")
 
 # formatting the relevant chunks
-#def format_docs(docs):
- #    return "\n\n".join(doc.page_content for doc in docs)
+def format_docs(docs):
+     return "\n\n".join(doc.page_content for doc in docs)
  
 # from langchain_groq import ChatGroq
 GROQ_API_KEY=os.getenv("GROQ_API_KEY")
@@ -62,15 +63,12 @@ llm = ChatGroq(
      api_key=GROQ_API_KEY
  )
 
-#rag_chain = (
- #    {"context": retriever | format_docs, "question": RunnablePassthrough()}
-  #   | prompt
-   #  | llm
-    # | StrOutputParser()
- #)
-
-
-
+rag_chain = (
+    {"context": retriever | format_docs, "question": RunnablePassthrough()}
+    | prompt
+    | llm
+    | StrOutputParser()
+    )
 
 
 def get_sm_footprints_prompt(query):
@@ -214,30 +212,9 @@ if selection=="Dashboard":
         if c==10:
          st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😍")
 
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     # Display pie chart
-        #fig, ax = plt.subplots(figsize=(5, 5))
-        # sns.barplot(result,ax=ax)
-        #ax.pie(result, autopct="%1.1f%%", startangle=90)
-        # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
-        #st.write("Cyber Fundamental Score")
-        #st.pyplot(fig)
-        #st.write("🔥")
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSe9__MDLd4zpgVskVXnjN2TxbWZgwxz5-Jtcq6YS_VCWfKAEg/viewform?usp=dialog)")
     with col2:
-        
-        
-     
-     
-          
+                 
         # Sample data
         labels = ['Correct', 'Incorrect']
         values = [c, w ]  # Example percentages or scores
@@ -261,30 +238,8 @@ if selection=="Dashboard":
          st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😊")
         if c==10:
          st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😍")
-
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-        # Display pie chart
-        #fig, ax = plt.subplots(figsize=(5, 5))
-        # sns.barplot(result,ax=ax)
-        #ax.pie(result,  autopct="%1.1f%%", startangle=90)
-        # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
-        #st.write("Cyber Essentials Score")
-        #st.pyplot(fig)
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSck_p-w_8cLQnIeU6IrHqoGZjcy8h_3taAOc083uhvw4l5kBA/viewform?usp=dialog)")
     with col3:
-        
-     
         # Sample data
         labels = ['Correct', 'Incorrect']
         values = [c, w ]  # Example percentages or scores
@@ -308,36 +263,6 @@ if selection=="Dashboard":
          st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😊")
         if c==10:
          st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😍")
-
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-        # Display pie chart
-        #fig, ax = plt.subplots(figsize=(5, 5))
-        # sns.barplot(correct,ax=ax)
-        #ax.pie([c,w])
-        # ax.axis("equal")  # Equal aspect ratio ensures the pie is drawn as a circle.
-        #st.write("Cyber Advanced Score")
-        #st.pyplot(fig)
-        #if c<=3:
-        # st.write("🙄")
-        #if c>3 and c<=8:
-        # st.write("😋")
-        #if c==10:
-        # st.write("😍")
-         
-         #st.button(":thumbsup:")
 
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSd_xz8xAvkVodtLzBqmXyWZBT50-W0VnFllFFyg-DePVuh8ww/viewform)")
     st.subheader("Cyber Security Guidelines")
