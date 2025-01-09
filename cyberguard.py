@@ -273,6 +273,25 @@ if selection=="Dashboard":
          st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😍")
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSck_p-w_8cLQnIeU6IrHqoGZjcy8h_3taAOc083uhvw4l5kBA/viewform?usp=dialog)")
     with col3:
+
+
+             url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
+        df=pd.read_csv(url)
+        #st.write(df.iloc[-1,1:-1].values)
+     
+        # st.write(df.iloc[-1,1:].values)
+        responses=df.iloc[-1,1:].values
+        #st.write(responses)
+        
+        result=[]
+        for i,j in zip(responses,advanced_key):
+            if i==j:
+                result.append(1)
+            else:
+                result.append(0)
+        #st.write(correct)
+        c=result.count(1)
+        w=result.count(0)
         # Sample data
         labels = ['Correct', 'Incorrect']
         values = [c, w ]  # Example percentages or scores
