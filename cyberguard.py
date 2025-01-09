@@ -235,7 +235,7 @@ if selection=="Dashboard":
         st.write(df.iloc[-1,2:-1].values)
      
         # st.write(df.iloc[-1,1:].values)
-        responses=df.iloc[-2,1:].values
+        responses=df.iloc[-1,1:].values
         st.write(responses)
         
         result=[]
