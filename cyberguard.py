@@ -449,8 +449,10 @@ def scan_file(api_key, file_path):
     headers = {
         'x-apikey': api_key
     }
+    with open(file_path, 'rb') as file:
+    binary_data = file.read()
     files = {
-        'file': ('./', open(file_path, 'rb'))
+        'file': binary_data
     }
 
     response = requests.post(url, headers=headers, files=files)
