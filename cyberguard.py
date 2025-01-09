@@ -256,7 +256,7 @@ if selection=="Dashboard":
         values = [c, w ]  # Example percentages or scores
         
         # Create a donut chart
-        fig2 = go.Figure(data=[go.Pie(values=values, hole=0.7)])
+        fig2 = go.Figure(data=[go.Pie(labels=labels, values=values, hole=0.7)])
         
         # Customize layout
         fig2.update_traces(
@@ -298,7 +298,7 @@ if selection=="Dashboard":
         values = [c, w ]  # Example percentages or scores
         
         # Create a donut chart
-        fig = go.Figure(data=[go.Pie(values=values, hole=0.7)])
+        fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=0.7)])
         
         # Customize layout
         fig.update_traces(
