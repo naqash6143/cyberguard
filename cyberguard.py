@@ -213,7 +213,7 @@ if selection=="Dashboard":
         fig1.update_traces(
             hoverinfo='label+percent',
             #textinfo='value+percent',
-            textfont_size=15,
+            textfont_size=10,
             marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
         )
         fig1.update_layout(title_text="yber Fundamental Score",width=300, height=300)
@@ -259,7 +259,7 @@ if selection=="Dashboard":
         fig2.update_traces(
             hoverinfo='label+percent',
             #textinfo='value+percent',
-            textfont_size=15,
+            textfont_size=10,
             marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
         )
         fig2.update_layout(title_text="Cyber Essentials Score",width=302, height=302)
@@ -303,7 +303,7 @@ if selection=="Dashboard":
         fig.update_traces(
             hoverinfo='label+percent',
             #textinfo='value+percent',
-            textfont_size=15,
+            textfont_size=10,
             marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
         )
         fig.update_layout(title_text="Cyber Advanced Score",width=301, height=301)
