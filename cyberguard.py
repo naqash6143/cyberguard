@@ -139,6 +139,21 @@ url = r'https://www.virustotal.com/vtapi/v2/file/scan'
 api= os.getenv("VT_API_KEY")
 ######################################################################################################################################
 
+
+fundamental_key=[
+ "Financial gain",
+ "Installing antivirus software",
+ "Information security covers both digital and physical information.",
+ "Phishing",
+ "!G5p7$R3&o2Lk!",
+ "Installs antivirus software on your system.",
+ "Phishing", "A tool used for secure online communication.",
+ "Phishing emails with malicious links",
+ "Write your passwords on sticky notes near your computer."
+]
+
+
+
 advanced_key = [ 
     "False videos or audio files created using advanced deep learning techniques", 
     "By encrypting sensitive user data", 
@@ -174,19 +189,15 @@ if selection=="Dashboard":
     st.subheader("Welcome to Dashboard")
     #https://docs.google.com/spreadsheets/d/14KEJcHSMJf0qiXhSjUJpNdBWORHWUUpgQU-yLtp8xJI/edit?gid=27636577#gid=27636577   
     sheet_name = 'Cyber Quiz (Responses)' # replace with your own sheet name
-    sheet_id = '14KEJcHSMJf0qiXhSjUJpNdBWORHWUUpgQU-yLtp8xJI' # replace with your sheet's ID
- 
-#https://docs.google.com/spreadsheets/d/14KEJcHSMJf0qiXhSjUJpNdBWORHWUUpgQU-yLtp8xJI/edit?gid=27636577#gid=27636577
-
-#essential_key=["A combination of uppercase letters, lowercase letters, numbers, and symbols.","Deceptive Content","both types of cybercrime that involve the use of a fake identity to gain access to personal information","a computer or software system that acts as an intermediary between a user and the internet.","sleep problems, attention problems, and feelings of exclusion among teenagers.","97 zero-day vulnerabilities",
- 
+    sheet_id = '1g8fmPaIbGbUQEd7liGgnuax0bBSKM-B3FaY8b9vivxk' # replace with your sheet's ID
+  
     url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
     df=pd.read_csv(url)
-    #st.write(df.iloc[-1,1:-1].values)
+    st.write(df.iloc[-1,1:-1].values)
  
-    # st.write(df.iloc[-1,1:].values)
+    #st.write(df.iloc[-1,1:].values)
     responses=df.iloc[-1,1:].values
-    #st.write(responses)
+    st.write(responses)
     
     result=[]
     for i,j in zip(responses,advanced_key):
