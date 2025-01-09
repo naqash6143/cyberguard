@@ -523,7 +523,7 @@ if selection=="Malicious File Scanner":
     if selected_option=="File Scanner":
         st.subheader("Malicious File Scanner 🕵️‍♂️")
         file=st.file_uploader("Select a File")
-        stringio = StringIO(file.getvalue().decode("utf-8"))
+        stringio = StringIO(file.getvalue())
         if file!=None and st.button("Analyze"): 
             scan_id = scan_file(api, stringio)
             report = get_file_scan_report(api, scan_id)
