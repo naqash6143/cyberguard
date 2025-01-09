@@ -200,7 +200,7 @@ if selection=="Dashboard":
     st.write(responses)
     
     result=[]
-    for i,j in zip(responses,advanced_key):
+    for i,j in zip(responses,fundamental_key):
         if i==j:
             result.append(1)
         else:
