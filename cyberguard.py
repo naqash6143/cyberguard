@@ -203,25 +203,7 @@ if selection=="Dashboard":
     col1,col2,col3=st.columns(3)
     # st.write(correct)
     with col1:
-        sheet_id="1FKU5_QWROr8jmGJ84ir1LmdJRkvqAlhpV2-SWkuafFE"
-        url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
-        df=pd.read_csv(url)
-        st.write(df.iloc[-1,1:-1].values)
-     
-        # st.write(df.iloc[-1,1:].values)
-        responses=df.iloc[-1,1:].values
-        #st.write(responses)
         
-        result=[]
-        for i,j in zip(responses,advanced_key):
-            if i==j:
-                result.append(1)
-            else:
-                result.append(0)
-        #st.write(correct)
-        c=result.count(1)
-        w=result.count(0)
-
         # Sample data
         labels = ['Correct', 'Incorrect']
         values = [c, w ]  # Example percentages or scores
@@ -246,7 +228,28 @@ if selection=="Dashboard":
 
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSe9__MDLd4zpgVskVXnjN2TxbWZgwxz5-Jtcq6YS_VCWfKAEg/viewform?usp=dialog)")
     with col2:
-                 
+
+        sheet_id="1FKU5_QWROr8jmGJ84ir1LmdJRkvqAlhpV2-SWkuafFE"
+        url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
+        df=pd.read_csv(url)
+        st.write(df.iloc[-1,2:-1].values)
+     
+        # st.write(df.iloc[-1,1:].values)
+        responses=df.iloc[-2,1:].values
+        st.write(responses)
+        
+        result=[]
+        for i,j in zip(responses,advanced_key):
+            if i==j:
+                result.append(1)
+            else:
+                result.append(0)
+        #st.write(correct)
+        c=result.count(1)
+        w=result.count(0)
+
+
+     
         # Sample data
         labels = ['Correct', 'Incorrect']
         values = [c, w ]  # Example percentages or scores
