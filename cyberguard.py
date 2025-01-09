@@ -153,6 +153,19 @@ advanced_key = [
 ]
 
 
+essential_key=[
+ "A. Use a short phrase with numbers and special characters",
+ "A. It’s easier for hackers to guess",
+ "B. It increases vulnerability if one account is breached", 
+ "B. Establish a secure connection over an unsecured network",
+ "C. By masking your IP address with the VPN server’s IP address", 
+ "B. To filter and block unwanted traffic from entering a private network",
+ "C. Host-based firewall", "B. They can contain malware that steals or encrypts data",
+ "B. It applies rules to an entire private network", 
+ "B. By using servers located in different countries"
+]
+
+
 ####################################################
 selection=st.sidebar.selectbox("Select",("Dashboard","NCA CrimeAssist","SafeSocial","Cyber Awareness Chatbot","Malicious File Scanner","Education Portal","PolicyGuardian","Feedback"))
 
@@ -189,7 +202,26 @@ if selection=="Dashboard":
  
     col1,col2,col3=st.columns(3)
     # st.write(correct)
-    with col1: 
+    with col1:
+        sheet_id="1FKU5_QWROr8jmGJ84ir1LmdJRkvqAlhpV2-SWkuafFE"
+        url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
+        df=pd.read_csv(url)
+        st.write(df.iloc[-1,1:-1].values)
+     
+        # st.write(df.iloc[-1,1:].values)
+        responses=df.iloc[-1,1:].values
+        #st.write(responses)
+        
+        result=[]
+        for i,j in zip(responses,advanced_key):
+            if i==j:
+                result.append(1)
+            else:
+                result.append(0)
+        #st.write(correct)
+        c=result.count(1)
+        w=result.count(0)
+
         # Sample data
         labels = ['Correct', 'Incorrect']
         values = [c, w ]  # Example percentages or scores
