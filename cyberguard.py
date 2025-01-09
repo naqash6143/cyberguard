@@ -29,7 +29,7 @@ import json
 import sys
 import os
 import colorama
-
+from io import StringIO
 from time import sleep 
 st.set_page_config(page_title="CyberGuard", page_icon="🔒", layout="centered", initial_sidebar_state="auto", menu_items=None)
 ##############################################################################################################################################################
@@ -523,10 +523,9 @@ if selection=="Malicious File Scanner":
     if selected_option=="File Scanner":
         st.subheader("Malicious File Scanner 🕵️‍♂️")
         file=st.file_uploader("Select a File")
-        with open(file, 'rb') as file:
-         file_data = file.read()
+        stringio = StringIO(file.getvalue().decode("utf-8"))
         if file!=None and st.button("Analyze"): 
-            scan_id = scan_file(api, file_data)
+            scan_id = scan_file(api, stringio)
             report = get_file_scan_report(api, scan_id)
             st.write(report)
             
