@@ -239,7 +239,7 @@ if selection=="Dashboard":
         st.write(responses)
         
         result=[]
-        for i,j in zip(responses,advanced_key):
+        for i,j in zip(responses,essential_key):
             if i==j:
                 result.append(1)
             else:
@@ -247,8 +247,6 @@ if selection=="Dashboard":
         #st.write(correct)
         c=result.count(1)
         w=result.count(0)
-
-
      
         # Sample data
         labels = ['Correct', 'Incorrect']
