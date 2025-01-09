@@ -264,6 +264,7 @@ if selection=="Dashboard":
         plt.show()
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSck_p-w_8cLQnIeU6IrHqoGZjcy8h_3taAOc083uhvw4l5kBA/viewform?usp=dialog)")
     with col3:
+        sheet_id = '14KEJcHSMJf0qiXhSjUJpNdBWORHWUUpgQU-yLtp8xJI' # replace with your sheet's ID
         url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
         df=pd.read_csv(url)
         #st.write(df.iloc[-1,1:-1].values)
