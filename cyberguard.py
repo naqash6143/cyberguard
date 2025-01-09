@@ -523,8 +523,9 @@ if selection=="Malicious File Scanner":
     if selected_option=="File Scanner":
         st.subheader("Malicious File Scanner 🕵️‍♂️")
         file=st.file_uploader("Select a File")
-        stringio = file.read()
-        if file!=None and st.button("Analyze"): 
+        
+        if file!=None and st.button("Analyze"):
+            stringio = file.read()
             scan_id = scan_file(api, stringio)
             report = get_file_scan_report(api, scan_id)
             st.write(report)
