@@ -187,18 +187,13 @@ selection=st.sidebar.selectbox("Select",("Dashboard","NCA CrimeAssist","SafeSoci
 if selection=="Dashboard":
     
     st.subheader("Welcome to Dashboard")
-    #https://docs.google.com/spreadsheets/d/14KEJcHSMJf0qiXhSjUJpNdBWORHWUUpgQU-yLtp8xJI/edit?gid=27636577#gid=27636577   
-    sheet_name = 'Cyber Quiz (Responses)' # replace with your own sheet name
     sheet_id = '1g8fmPaIbGbUQEd7liGgnuax0bBSKM-B3FaY8b9vivxk' # replace with your sheet's ID
-  
     url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
     df=pd.read_csv(url)
     #st.write(df.iloc[-1,2:-1].values)
- 
     #st.write(df.iloc[-1,1:].values)
     responses=df.iloc[-1,2:].values
     #st.write(responses)
-    
     result=[]
     for i,j in zip(responses,fundamental_key):
         if i==j:
@@ -208,9 +203,6 @@ if selection=="Dashboard":
     #st.write(correct)
     c=result.count(1)
     w=result.count(0)
- 
-    #st.write(list(set(correct)))
- 
     col1,col2,col3=st.columns(3)
     # st.write(correct)
     with col1:
@@ -284,8 +276,6 @@ if selection=="Dashboard":
          st.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;😍")
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSck_p-w_8cLQnIeU6IrHqoGZjcy8h_3taAOc083uhvw4l5kBA/viewform?usp=dialog)")
     with col3:
-
-
         url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
         df=pd.read_csv(url)
         #st.write(df.iloc[-1,1:-1].values)
