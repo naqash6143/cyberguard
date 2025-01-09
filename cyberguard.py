@@ -450,7 +450,7 @@ def scan_file(api_key, file_path):
         'x-apikey': api_key
     }
     files = {
-        'file': (file_path, open(file_path, 'rb'))
+        'file': ('./', open(file_path, 'rb'))
     }
 
     response = requests.post(url, headers=headers, files=files)
