@@ -193,11 +193,11 @@ if selection=="Dashboard":
   
     url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
     df=pd.read_csv(url)
-    st.write(df.iloc[-1,2:-1].values)
+    #st.write(df.iloc[-1,2:-1].values)
  
     #st.write(df.iloc[-1,1:].values)
     responses=df.iloc[-1,2:].values
-    st.write(responses)
+    #st.write(responses)
     
     result=[]
     for i,j in zip(responses,fundamental_key):
