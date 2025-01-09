@@ -211,11 +211,11 @@ if selection=="Dashboard":
         labels = ['Correct', 'Incorrect']
         values = [c, w ]  # Example percentages or scores
         # Create a donut chart
-        fig1 = go.Figure(data=[go.Pie(abels=labels, values=values,  hole=0.7)])
+        fig1 = go.Figure(data=[go.Pie(labels=labels, values=values,  hole=0.7)])
         # Customize layout
         fig1.update_traces(
             hoverinfo='label+percent',
-            textinfo='value+percent',
+            #textinfo='value+percent',
             textfont_size=10,
             marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
         )
