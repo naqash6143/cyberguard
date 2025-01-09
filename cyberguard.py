@@ -216,7 +216,7 @@ if selection=="Dashboard":
             textfont_size=10,
             marker=dict(colors=['#FD8D3C','#6BAED6', '#74C476'], line=dict(color='#FFFFFF', width=2))
         )
-        fig1.update_layout(title_text="yber Fundamental Score",width=300, height=300)
+        fig1.update_layout(title_text="Cyber Fundamental Score",width=300, height=300)
         st.plotly_chart(fig1)
         plt.show()
         if c<=3:
