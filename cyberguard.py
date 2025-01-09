@@ -450,7 +450,7 @@ def scan_file(api_key, file_path):
         'x-apikey': api_key
     }
     with open(file_path, 'rb') as file:
-    binary_data = file.read()
+     binary_data = file.read()
     files = {
         'file': binary_data
     }
