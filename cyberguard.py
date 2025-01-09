@@ -449,10 +449,10 @@ def scan_file(api_key, file_path):
     headers = {
         'x-apikey': api_key
     }
-    with open(file_path, 'rb') as file:
-     binary_data = file.read()
+    #with open(file_path, 'rb') as file:
+    # binary_data = file.read()
     files = {
-        'file': binary_data
+        'file': file_path
     }
 
     response = requests.post(url, headers=headers, files=files)
@@ -523,8 +523,10 @@ if selection=="Malicious File Scanner":
     if selected_option=="File Scanner":
         st.subheader("Malicious File Scanner 🕵️‍♂️")
         file=st.file_uploader("Select a File")
+        with open(file, 'rb') as file:
+         file_data = file.read()
         if file!=None and st.button("Analyze"): 
-            scan_id = scan_file(api, file.name)
+            scan_id = scan_file(api, file_data)
             report = get_file_scan_report(api, scan_id)
             st.write(report)
             
