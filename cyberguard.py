@@ -498,7 +498,7 @@ def scan_url(api_key, url):
         # print("Scan ID:", result.get('scan_id'))
         # print("Verbose Message:", result.get('verbose_msg'))
     else:
-        write("Error:", response.status_code, response.text)
+        st.write("Error:", response.status_code, response.text)
 
 def get_url_scan_report(api_key, scan_id):
     # Define the endpoint for retrieving scan reports
