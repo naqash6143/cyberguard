@@ -176,7 +176,8 @@ essential_key=[
  "B. Establish a secure connection over an unsecured network",
  "C. By masking your IP address with the VPN server’s IP address", 
  "B. To filter and block unwanted traffic from entering a private network",
- "C. Host-based firewall", "B. They can contain malware that steals or encrypts data",
+ "C. Host-based firewall",
+ "B. They can contain malware that steals or encrypts data",
  "B. It applies rules to an entire private network", 
  "B. By using servers located in different countries"
 ]
