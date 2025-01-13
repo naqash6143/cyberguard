@@ -141,7 +141,7 @@ api= os.getenv("VT_API_KEY")
 
 
 fundamental_key=[
- "Financial gain",
+ "Software piracy",
  "Installing antivirus software",
  "Information security covers both digital and physical information.",
  "Phishing",
