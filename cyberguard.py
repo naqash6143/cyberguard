@@ -224,7 +224,7 @@ if selection=="Dashboard":
         st.plotly_chart(fig1)
         plt.show()
         
-        st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSe9__MDLd4zpgVskVXnjN2TxbWZgwxz5-Jtcq6YS_VCWfKAEg/viewform?usp=dialog)")
+        st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLScSmGigCE4aKe2S7GPlJQLnhbu8TLnxi424hQA5tGWVSHrw5w/viewform?usp=dialog)")
     with col2:
 
         sheet_id="1FKU5_QWROr8jmGJ84ir1LmdJRkvqAlhpV2-SWkuafFE"
@@ -599,7 +599,7 @@ if selection=="Education Portal":
         with col2:
             st.caption("How to configure privacy in Instagram?")
             st.video("https://youtu.be/ZcQzqdnkKvk?si=g5O2DzZG-Z4HNhCu")
-    st.write("Test Yourself [Here](https://docs.google.com/forms/d/1u2Mm2gwvPQmMWRM_9WTtUC3-E_XRpX93ECFB8hQVMto/edit)")
+    st.write("Test Yourself [Here](https://docs.google.com/forms/d/e/1FAIpQLScSmGigCE4aKe2S7GPlJQLnhbu8TLnxi424hQA5tGWVSHrw5w/viewform?usp=dialog)")
 
     st.html("<h4>Essentials</h4>")
     col1,col2=st.columns(2)
