@@ -264,9 +264,9 @@ if selection=="Dashboard":
         fig2.update_layout(title_text="Cyber Essentials Score",width=302, height=302)
         st.plotly_chart(fig2)
         plt.show()
-        st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSck_p-w_8cLQnIeU6IrHqoGZjcy8h_3taAOc083uhvw4l5kBA/viewform?usp=dialog)")
+        st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSfssgDmechuzVhLerf5ZJLbqXMHE3-w1lAG247ZZ4yWhS3lYw/viewform?usp=dialog)")
     with col3:
-        sheet_id = '14KEJcHSMJf0qiXhSjUJpNdBWORHWUUpgQU-yLtp8xJI' # replace with your sheet's ID
+        sheet_id = "1qJ5GXW8jJGKH8JverNFcXdB69euibVLx3jApOCEPVgc"
         url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
         df=pd.read_csv(url)
         #st.write(df.iloc[-1,1:-1].values)
@@ -301,7 +301,7 @@ if selection=="Dashboard":
         fig.update_layout(title_text="Cyber Advanced Score",width=301, height=301)
         st.plotly_chart(fig)
         #plt.show()
-        st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSd_xz8xAvkVodtLzBqmXyWZBT50-W0VnFllFFyg-DePVuh8ww/viewform)")
+        st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLSdUPME-h267R8Y8GnzC9agwivkOpiQLkXzXhkjK69ZNzqoK5Q/viewform?usp=dialog)")
     st.subheader("Cyber Security Guidelines")
     
     col1,col2,col3=st.columns(3)
@@ -646,7 +646,7 @@ if selection=="Education Portal":
             st.caption("Physical Security")
             st.video("https://youtu.be/tYapnGMrzp8?si=bPApRizw6lh4GJmy")
 
-    st.write("Test Yourself [Here](https://docs.google.com/forms/d/1otwGsbHuM9Ju_afEoOW6t__Z6dZ36HZmYJ7kHhi0on8/edit)")
+    st.write("Test Yourself [Here](https://docs.google.com/forms/d/e/1FAIpQLSfssgDmechuzVhLerf5ZJLbqXMHE3-w1lAG247ZZ4yWhS3lYw/viewform?usp=dialog)")
         
     st.html("<h4>Advanced</h4>")
     col1,col2=st.columns(2)
@@ -673,7 +673,7 @@ if selection=="Education Portal":
         with col2:
             st.caption("Top 5 cloud security best practices checklist")
             st.video("https://youtu.be/ISkw0MwP2UA?si=AMiYkXKGdWTRc2zA")
-    st.write("Test Yourself [Here](https://docs.google.com/forms/d/1CAWF2l5TRPKMwVBMcjvxM2Hxo0rRreOTkQ7BD_j14ww/edit)")
+    st.write("Test Yourself [Here](https://docs.google.com/forms/d/e/1FAIpQLSdUPME-h267R8Y8GnzC9agwivkOpiQLkXzXhkjK69ZNzqoK5Q/viewform?usp=dialog)")
         
 if selection=="PolicyGuardian":
     st.subheader("Welcome to Policy Guardian 🧾")
