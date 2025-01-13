@@ -142,14 +142,15 @@ api= os.getenv("VT_API_KEY")
 
 fundamental_key=[
  "Software piracy",
- "Installing antivirus software",
- "Information security covers both digital and physical information.",
+ "Cryptojacking",
  "Phishing",
- "!G5p7$R3&o2Lk!",
- "Installs antivirus software on your system.",
- "Phishing", "A tool used for secure online communication.",
+ "Use a password manager to generate and store strong passwords.",
  "Phishing emails with malicious links",
- "Write your passwords on sticky notes near your computer."
+ "Information security covers both digital and physical information.",
+ "!G5p7$R3&o2Lk!",
+ "Encrypts or locks your data and demands payment.",
+ "Financial gain"
+ "A network of infected devices controlled by cybercriminals."
 ]
 
 
