@@ -228,7 +228,7 @@ if selection=="Dashboard":
         st.write("Improve your Score [Here](https://docs.google.com/forms/d/e/1FAIpQLScSmGigCE4aKe2S7GPlJQLnhbu8TLnxi424hQA5tGWVSHrw5w/viewform?usp=dialog)")
     with col2:
 
-        sheet_id="1FKU5_QWROr8jmGJ84ir1LmdJRkvqAlhpV2-SWkuafFE"
+        sheet_id="13PPf2aHej0FABrK6U0KiyAYRtIaKpSpYhU2n56YmDdM"
         url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
         df=pd.read_csv(url)
         #st.write(df.iloc[-1,2:-1].values)
