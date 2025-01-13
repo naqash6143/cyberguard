@@ -141,16 +141,16 @@ api= os.getenv("VT_API_KEY")
 
 
 fundamental_key=[
- "Software piracy",
- "Cryptojacking",
- "Phishing",
- "Use a password manager to generate and store strong passwords.",
- "Phishing emails with malicious links",
+ "Creating art",
+ "Installing antivirus software",
  "Information security covers both digital and physical information.",
+ "Phishing",
  "!G5p7$R3&o2Lk!",
  "Encrypts or locks your data and demands payment.",
- "Financial gain"
- "A network of infected devices controlled by cybercriminals."
+ "Cryptojacking",
+ "A network of infected devices controlled by cybercriminals.",
+ "Phishing emails with malicious links"
+ "Use a password manager to generate and store strong passwords."
 ]
 
 
@@ -188,7 +188,7 @@ selection=st.sidebar.selectbox("Select",("Dashboard","NCA CrimeAssist","SafeSoci
 if selection=="Dashboard":
     
     st.subheader("Welcome to Dashboard")
-    sheet_id = '1g8fmPaIbGbUQEd7liGgnuax0bBSKM-B3FaY8b9vivxk' # replace with your sheet's ID
+    sheet_id = "1wwQ-GLl3KhLy6Pq2CqXrA41SD3OueSQ6_kwTNFJIPS4"
     url=f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
     df=pd.read_csv(url)
     #st.write(df.iloc[-1,2:-1].values)
