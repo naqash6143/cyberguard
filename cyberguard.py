@@ -272,7 +272,7 @@ if selection=="Dashboard":
         #st.write(df.iloc[-1,1:-1].values)
      
         # st.write(df.iloc[-1,1:].values)
-        responses=df.iloc[-1,1:].values
+        responses=df.iloc[-1,2:].values
         st.write(responses)
         st.write(advanced_key)
         
